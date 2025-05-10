@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Fruit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            color: #4caf50;
+        }
+
+        form {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Add New Fruit</h2>
+
+<form th:action="@{/fruits/add}" th:object="${fruit}" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" th:field="*{name}" required>
+
+    <label for="category">Category</label>
+    <input type="text" id="category" th:field="*{category}" required>
+
+    <label for="pricePerKg">Price per Kg</label>
+    <input type="number" step="0.01" id="pricePerKg" th:field="*{pricePerKg}" required>
+
+    <label for="stockInKg">Stock in Kg</label>
+    <input type="number" step="0.01" id="stockInKg" th:field="*{stockInKg}" required>
+
+    <label for="imageUrl">Image URL </label>
+    <input type="text" id="imageUrl" th:field="*{imageUrl}">
+
+    <button type="submit">Add Fruit</button>
+</form>
+
+</body>
+</html>
