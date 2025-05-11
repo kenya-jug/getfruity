@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fruits Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #F28C28;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1rem;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .fruit-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .fruit-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .fruit-card h3 {
+            margin: 0.5rem 0 0.3rem;
+        }
+
+        .fruit-card p {
+            margin: 0.2rem 0;
+            font-size: 0.9rem;
+        }
+        .large-emoji {
+            font-size: 4rem;  /* Adjust size as needed */
+            line-height: 1;
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #eee;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to the Fruits Store</h1>
+</header>
+<div class="container">
+    <p>
+        <a th:href="@{/fruits/add}">+ Add New Fruit</a>
+    </p>
+    <div class="fruit-card" th:each="fruit : ${fruits}">
+        <h6 class="large-emoji" th:text="${fruit.imageUrl}">🍒</h6>
+        <h3 th:text="${fruit.name}">Fruit Name</h3>
+        <p>Category: <span th:text="${fruit.category}">Category</span></p>
+        <p>Price: $<span th:text="${fruit.pricePerKg}">0.00</span>/kg</p>
+    </div>
+</div>
+
+</body>
+</html>

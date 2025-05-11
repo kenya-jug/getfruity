@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Error - Fruits Store</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .error-box {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 2rem;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #e74c3c;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            color: white;
+            background-color: #4caf50;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #43a047;
+        }
+    </style>
+</head>
+<body>
+
+<div class="error-box">
+    <h1>Oops! Something went fruity.</h1>
+    <p>The page you’re looking for doesn’t exist or an error occurred.</p>
+    <a th:href="@{/}">← Go Back to Fruity</a>
+</div>
+
+</body>
+</html>
