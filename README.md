@@ -1,11 +1,7 @@
 # 🍒 GetFruity
 Delicious Fruits Store
 
-
-
-
-
-
+<img width="1434" alt="store" src="https://github.com/user-attachments/assets/0ee75b00-a8c6-4054-a07a-b723d0379bb6" />
 
 <!-- coverage start -->
 ## 📊 Code Coverage Report
