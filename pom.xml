@@ -150,6 +150,34 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>software.xdev</groupId>
+				<artifactId>music-maven-plugin</artifactId>
+				<version>1.0.2</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>music</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sources>
+						<musicSource>
+							<!-- Available Options -->
+							<!-- Source: Internet Archives : FAPO License -->
+							<!--							<uri>https://ia801403.us.archive.org/14/items/MovieTunes/James%20Bond%20007-Henry%20Mancini.mp3</uri>-->
+							<!--							<uri>https://ia801403.us.archive.org/14/items/MovieTunes/Star%20Wars%20-%20Main%20Theme-Movies%20Themes%20-%20John%20Williams.mp3</uri>-->
+<!--							<uri>https://ia801403.us.archive.org/14/items/MovieTunes/TheImperialMarchdarthVadersTheme-StarWars-johnWilliams-.mp3</uri>-->
+														<uri>https://ia903409.us.archive.org/3/items/MissionImpossibleTheme/MissionImpossibleTheme.mp3</uri>
+							<!--							<uri>https://ia801403.us.archive.org/14/items/MovieTunes/The%20Terminator%202-John%20Williams.mp3</uri>-->
+							<!-- THESE TRACKS ARE HERE ONLY FOR EDUCATIONAL PURPOSES ONLY. -->
+						</musicSource>
+					</sources>
+					<shuffle>true</shuffle>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
