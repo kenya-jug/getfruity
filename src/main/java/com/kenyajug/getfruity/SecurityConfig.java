@@ -1,9 +1,9 @@
 package com.kenyajug.getfruity;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -19,10 +19,11 @@ public class SecurityConfig {
         return httpSecurity
                 .authorizeHttpRequests(auth -> {
                     auth
-                            .requestMatchers("/css/**", "/js/**", "/images/**","/")
+                            .requestMatchers("/css/**", "/js/**", "/images/**")
                             .permitAll()
                             .anyRequest().authenticated();
                 })
+                .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
                 .build();
     }
     @Bean
